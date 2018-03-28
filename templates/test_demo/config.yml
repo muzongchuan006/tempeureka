@@ -1,0 +1,11 @@
+name: public_test 
+description: |
+    rabbitmq_ip: 10.42.1.200
+    redis_ip: 10.42.1.201 
+    master_ip: 10.42.1.202 
+    slave_ip: 10.42.1.203 
+version:  1.0.0
+category:  public_service
+maintainer:  weds
+license: public:v1.0.0
+projectURL: https://github.com/muzongchuan006/demo

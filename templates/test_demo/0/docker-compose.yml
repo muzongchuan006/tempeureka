@@ -1,0 +1,18 @@
+version: '2'
+services:
+  tempeureka:
+     image: 10.0.0.96:5000/my_os/centos:7.java
+     hostname: tempeureka
+     networks: 
+       - docker_gwbridge
+     ports:
+       - "8761:8761"
+       - "8000:8000"
+       - "8800:8800"
+       - "60000:60000"
+       - "8771:8771"
+       - "8900:8900"
+     volumes:
+       - /demo/node:/data
+     privileged: true
+     tty: true
