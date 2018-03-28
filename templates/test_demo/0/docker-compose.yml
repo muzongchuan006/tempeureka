@@ -3,8 +3,6 @@ services:
   tempeureka:
      image: 10.0.0.96:5000/my_os/centos:7.java
      hostname: tempeureka
-     networks: 
-       - docker_gwbridge
      ports:
        - "8761:8761"
        - "8000:8000"
@@ -16,3 +14,4 @@ services:
        - /demo/node:/data
      privileged: true
      tty: true
+     #command: sh /data/start_tempeureka.sh
