@@ -13,7 +13,7 @@ services:
        - "8771:8771"
        - "8900:8900"
      volumes:
-       - /demo/node:/data
+       - /demo/node/tempeureka:/data
      privileged: true
      tty: true
      #command: sh /data/start_tempeureka.sh
