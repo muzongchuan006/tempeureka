@@ -3,6 +3,9 @@ services:
   tempeureka:
      image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
      hostname: tempeureka
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=102
      networks:
        - docker_gwbridge
      ports:
