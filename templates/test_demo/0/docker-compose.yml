@@ -5,7 +5,7 @@ services:
      hostname: tempeureka
      labels:
       io.rancher.scheduler.global: 'true'
-      io.rancher.scheduler.affinity:host_label: key1=102
+      io.rancher.scheduler.affinity:host_label: key1=110
      networks:
        - docker_gwbridge
      ports:
@@ -19,4 +19,3 @@ services:
        - /demo/node/tempeureka:/data
      privileged: true
      tty: true
-     #command: sh /data/start_tempeureka.sh
