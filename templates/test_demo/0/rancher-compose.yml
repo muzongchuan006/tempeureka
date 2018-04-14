@@ -6,15 +6,28 @@ version: '2'
   uuid: tempeureka-0
   minimum_rancher_version: v1.0.0
 services:
-  tempeureka:
+  eureka:
     scale: 1
     start_on_create: true
-    health_check:
-      healthy_threshold: 1
-      response_timeout: 2000
-      port: 8800
-      unhealthy_threshold: 3
-      interval: 2000
-      strategy: recreate
     labels:
       io.rancher.container.requested_ip: "10.42.1.210"
+  config:
+    scale: 1
+    start_on_create: true
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.211"
+  account:
+    scale: 1
+    start_on_create: true
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.212"
+  monitor:
+    scale: 1
+    start_on_create: true
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.213"
+  apigateway:
+    scale: 1
+    start_on_create: true
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.214"

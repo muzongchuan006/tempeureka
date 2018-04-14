@@ -1,20 +1,66 @@
 version: '2'
 services:
-  tempeureka:
+  eureka:
      image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
-     hostname: tempeureka
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
      networks:
        - docker_gwbridge
      ports:
-       - "8761:8761"
-       - "8000:8000"
-       - "8800:8800"
-       - "60000:60000"
-       - "8771:8771"
+       - "8899:8899"
+     volumes:
+       - /demo/node/tempeureka:/data
+     privileged: true
+     tty: true
+  config:
+     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     networks:
+       - docker_gwbridge
+     ports:
        - "8900:8900"
+     volumes:
+       - /demo/node/tempeureka:/data
+     privileged: true
+     tty: true
+  account:
+     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     networks:
+       - docker_gwbridge
+     ports:
+       - "8901:8901"
+     volumes:
+       - /demo/node/tempeureka:/data
+     privileged: true
+     tty: true
+  monitor:
+     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     networks:
+       - docker_gwbridge
+     ports:
+       - "8902:8902"
+     volumes:
+       - /demo/node/tempeureka:/data
+     privileged: true
+     tty: true
+  apigateway:
+     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     networks:
+       - docker_gwbridge
+     ports:
+       - "8903:8903"
      volumes:
        - /demo/node/tempeureka:/data
      privileged: true
