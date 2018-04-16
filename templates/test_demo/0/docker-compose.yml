@@ -1,7 +1,7 @@
 version: '2'
 services:
   eureka:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
@@ -14,7 +14,7 @@ services:
      privileged: true
      tty: true
   config:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
@@ -27,7 +27,7 @@ services:
      privileged: true
      tty: true
   account:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
@@ -40,7 +40,7 @@ services:
      privileged: true
      tty: true
   monitor:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
@@ -53,7 +53,7 @@ services:
      privileged: true
      tty: true
   apigateway:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
