@@ -31,3 +31,8 @@ services:
     start_on_create: true
     labels:
       io.rancher.container.requested_ip: "10.42.1.214"
+  configlocal:
+    scale: 1
+    start_on_create: true
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.215"

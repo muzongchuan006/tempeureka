@@ -26,6 +26,19 @@ services:
        - /demo/node/tempeureka:/data
      privileged: true
      tty: true
+  configlocal:
+     image: 10.0.0.96:5000/my_os/centos:7.java
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     networks:
+       - docker_gwbridge
+     ports:
+       - "8904:8904"
+     volumes:
+       - /demo/node/tempeureka:/data
+     privileged: true
+     tty: true
   account:
      image: 10.0.0.96:5000/my_os/centos:7.java
      labels:
